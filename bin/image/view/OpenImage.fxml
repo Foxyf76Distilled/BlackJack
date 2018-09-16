@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="image.view.OpenImageController">
+   <left>
+      <VBox prefHeight="600.0" prefWidth="593.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="displayUserCards" alignment="CENTER" prefHeight="300.0" prefWidth="593.0" style="-fx-background-color: rgb(80,200,80);" />
+            <HBox fx:id="displayCPUCards" alignment="CENTER" maxHeight="400.0" prefHeight="337.0" prefWidth="593.0" style="-fx-background-color: rgb(200,80,80);" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="TOP_CENTER" maxWidth="214.0" prefHeight="570.0" prefWidth="214.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="play" layoutX="68.0" layoutY="40.0" mnemonicParsing="false" onAction="#play" prefHeight="25.0" prefWidth="77.0" style="-fx-background-radius: 20;" text="Play">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="hit" mnemonicParsing="false" onAction="#generateUserHand" prefHeight="25.0" prefWidth="77.0" style="-fx-background-radius: 20;" text="Hit">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="stand" layoutX="70.0" layoutY="40.0" mnemonicParsing="false" onAction="#showCPUHand" prefHeight="25.0" prefWidth="77.0" style="-fx-background-radius: 20;" text="Stand">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Line endX="100.0" startX="-100.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Line>
+            <TextField fx:id="bet" maxHeight="100.0" maxWidth="100.0" prefHeight="25.0" prefWidth="162.0" style="-fx-background-radius: 10;">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="betButton" layoutX="72.0" layoutY="120.0" mnemonicParsing="false" onAction="#betting" prefHeight="25.0" prefWidth="77.0" style="-fx-background-radius: 20;" text="Bet">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <HBox alignment="CENTER" maxHeight="200.0" prefHeight="48.0" prefWidth="214.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <Label text="User Money:" />
+                  <Label fx:id="userMoneyLabel" text="0" />
+                  <Label text="CPU Money:">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="CPUMoneyLabel" text="0" />
+               </children>
+            </HBox>
+            <Label text="Current Wager: " />
+            <Label fx:id="totalBetLabel" text="0" />
+            <Line endX="100.0" startX="-100.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Line>
+            <Label text="STREAK:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="streak" text="0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label text="USER" textFill="#50c850">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="userValueLabel" alignment="BOTTOM_CENTER" text="0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="93.0" layoutY="411.0" text="CPU" textFill="#c85050">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="CPUValueLabel" alignment="BOTTOM_CENTER" layoutX="103.0" layoutY="428.0" text="?">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Line fx:id="upper" endX="60.0" startX="-100.0" visible="false">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Line>
+            <Label fx:id="verdict" alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="176.0" text="Label" visible="false">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#test" text="Button" />
+            <Line fx:id="lower" endX="60.0" layoutX="131.0" layoutY="510.0" startX="-100.0" visible="false">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Line>
+         </children>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </VBox>
+   </right>
+</BorderPane>
