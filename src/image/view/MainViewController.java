@@ -16,7 +16,4 @@ public class MainViewController {
 	private void goOpenImage() throws IOException {
 		main.showOpenImage();
 	}
-	
-
-
 }
