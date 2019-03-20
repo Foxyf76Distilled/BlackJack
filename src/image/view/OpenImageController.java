@@ -417,17 +417,4 @@ public class OpenImageController {
 		return totalBet;
 	}
 
-	public void test() {
-		String arrayTest[] = new String[5];
-		arrayTest[0] = " I ";
-		arrayTest[1] = " LOVE ";
-		arrayTest[2] = " YOU ";
-		arrayTest[3] = " CLARE ";
-		arrayTest[4] = " ! ";
-		
-		for (int i=0;i<arrayTest.length;i++){
-			System.out.println(arrayTest[i]);
-		}
-		
-	}
 }
